@@ -1,6 +1,5 @@
 import { Box, Link } from "@mui/material"
 import Typing_ani from "../components/Typing_ani"
-import { orange } from "@mui/material/colors"
 
 const Home = () => {
   return (

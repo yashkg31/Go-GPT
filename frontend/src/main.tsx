@@ -9,7 +9,7 @@ import axios from 'axios'
 import {Toaster} from 'react-hot-toast'
 
 
-axios.defaults.baseURL = "http://localhost:3000/api/v1";
+axios.defaults.baseURL = "https://go-gpt-backend.onrender.com";
 axios.defaults.withCredentials = true;
 
 const theme = createTheme({

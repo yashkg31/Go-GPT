@@ -6,7 +6,7 @@
 
 ## Screenshots
 
-![Screenshot (45).png](Screenshot (45).png)
-![Screenshot (46).png](Screenshot (46).png)
-![Screenshot (47).png](Screenshot (47).png)
-![Screenshot (48).png](Screenshot (48).png)
+![Screenshot 45](./frontend/public/Screenshot%20(45).png)
+![Screenshot 46](./frontend/public/Screenshot%20(46).png)
+![Screenshot 47](./frontend/public/Screenshot%20(47).png)
+![Screenshot 48](./frontend/public/Screenshot%20(48).png)
