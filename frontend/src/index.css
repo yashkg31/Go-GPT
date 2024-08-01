@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Zain:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  color: rgb(255, 255, 255);
+  background-color: rgb(0, 0, 0);
+  font-family: "Roboto", sans-serif
+}
+
+.navlink{
+  font-size: small;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-right: 10px;
+  margin-left: 10px;
+  padding: 6px 12px;
+  border-radius: 10px;
+  letter-spacing: 1px;
+  text-decoration: none;
+}
+
+.heading{
+  position: relative;
+}
+
+.heading::before{
+
+}
+
+.heading::after{
+  margin-left: 10%;
+  margin-right: 10%;
+  width: 80%;
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(
+    0deg,
+    #6361db,
+    #e033c8,
+    #2a87da,
+    #9346da,
+    #f9766e,
+    #c3978f,
+    #e16b96,
+    #fa5394,
+    #445ce8,
+    #44c4ac
+  );
+  border-radius: inherit;
+  filter: blur(20px);
+}
