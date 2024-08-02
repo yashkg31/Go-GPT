@@ -33,7 +33,7 @@ export const userSignUp = async (req, res, next) => {
 
         res.clearCookie(COOKIE_NAME, {
             path: "/",
-            domain: "https://go-gpt.onrender.com",
+            domain: "go-gpt.onrender",
             httpOnly: false,
             signed: true
         });
@@ -43,7 +43,7 @@ export const userSignUp = async (req, res, next) => {
         expires.setDate(expires.getDate() + 30);
         res.cookie(COOKIE_NAME, token, {
             path: "/",
-            domain: "https://go-gpt.onrender.com",
+            domain: "go-gpt.onrender",
             expires,
             httpOnly: false,
             signed: true
@@ -82,7 +82,7 @@ export const userLogin = async (req, res, next) => {
 
         res.clearCookie(COOKIE_NAME, {
             path: "/",
-            domain: "https://go-gpt.onrender.com",
+            domain: "go-gpt.onrender",
             httpOnly: false,
             signed: true
         });
@@ -92,7 +92,7 @@ export const userLogin = async (req, res, next) => {
         expires.setDate(expires.getDate() + 30);
         res.cookie(COOKIE_NAME, token, {
             path: "/",
-            domain: "https://go-gpt.onrender.com",
+            domain: "go-gpt.onrender",
             expires,
             httpOnly: false,
             signed: true
@@ -156,7 +156,7 @@ export const userLogout = async (req, res, next) => {  //token verification
 
         res.clearCookie(COOKIE_NAME, {
             path: "/",
-            domain: "https://go-gpt.onrender.com",
+            domain: "go-gpt.onrender",
             httpOnly: false,
             signed: true
         });
