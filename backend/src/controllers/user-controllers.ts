@@ -201,7 +201,6 @@ export const userSignUp = async (req, res) => {
         res.clearCookie(COOKIE_NAME, {
             path: "/",
             domain: "go-gpt.onrender.com",
-            expires,
             httpOnly: true,
             secure: true,
             sameSite: "none",
@@ -241,7 +240,6 @@ export const userLogin = async (req, res) => {
         res.clearCookie(COOKIE_NAME, {
             path: "/",
             domain: "go-gpt.onrender.com",
-            expires,
             httpOnly: true,
             secure: true,
             sameSite: "none",
@@ -286,7 +284,6 @@ export const userLogout = async (req, res) => {
         res.clearCookie(COOKIE_NAME, {
             path: "/",
             domain: "go-gpt.onrender.com",
-            expires,
             httpOnly: true,
             secure: true,
             sameSite: "none",
