@@ -64,6 +64,7 @@ const Home = () => {
 
             <h2 style={{
               fontFamily: "Zain, sans-serif",
+              marginRight: "30px"
             }}>Created by <Link
               href="https://www.linkedin.com/in/yash-gupta-12511a220/"
               underline="none"
@@ -78,6 +79,7 @@ const Home = () => {
 
             <h2 style={{
               fontFamily: "Zain, sans-serif",
+              marginLeft: "30px"
             }}><Link
               href="https://github.com/yashkg31/"
               color={"#ff8d30"}
