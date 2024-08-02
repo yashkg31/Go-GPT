@@ -47,7 +47,7 @@ const Login = () => {
   height={"90vh"}>
 
     <Box
-    width={{md : "420px", sm: "400px", xs : "360px"}}
+    width={{md : "420px", sm: "400px", xs : "320px"}}
     display={"flex"}
     justifyContent={"center"}
     alignItems={"center"}
