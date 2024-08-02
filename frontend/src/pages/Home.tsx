@@ -18,7 +18,10 @@ const Home = () => {
           flexDirection: "column",
           alignItems: "center",
           mx: "auto",
-          mt: "20vh",
+          mt: {
+            lg: "20vh",
+            xs: "15vh"
+          },
           mb: 3
         }}>
           <Box bgcolor={"black"} sx={{
@@ -26,7 +29,7 @@ const Home = () => {
               lg: "70px",
               md: "50px",
               sm: "36px",
-              xs: "28px",
+              xs: "22px",
             },
             fontWeight: 800,
             width: "80%",
@@ -36,6 +39,10 @@ const Home = () => {
               xs: "auto"
             },
             pt: { xs: 5},
+            pb: {
+              sm: 5,
+              xs: 5
+            },
             display: "flex",
             flexDirection: "column",
             alignItems: "center"
@@ -48,45 +55,43 @@ const Home = () => {
           <h1 style={{
             letterSpacing: "2px"
           }}> About Go-GPT :</h1>
-          <Box fontFamily={"Zain, sans-serif"}
-          fontSize={"32px"}>
+          <Box fontFamily={"Zain, sans-serif"} mb={5}
+          fontSize={{ md: "32px", lg: "32px", xs: "24px"}}>
             'Go-GPT' is an AI chatbot project built using the MERN stack (MongoDB, Express.js, React, and Node.js) and the OpenAI API. It features secure signup and login functionalities with full authentication. Users can interact with the chatbot in real-time, taking advantage of OpenAI's capabilities to provide intelligent and context-aware responses. This project demonstrates the effective integration of AI with modern web technologies.
           </Box>
-        </Box>
 
-        <Box display={"flex"} >
-        <h2 style={{
-          fontFamily: "Zain, sans-serif",
-          marginLeft: 200,
-          marginRight: 200
-        }}>Created by <Link
-            href="https://www.linkedin.com/in/yash-gupta-12511a220/"
-            underline="none"
-            color={"#ff8d30"}
-            sx={{
-        '&:hover': {
-          color: '#0fa3ff',
-        },
-      }}
-          >Yash Gupta
-          </Link></h2>
-          
-        <h2 style={{
-          fontFamily: "Zain, sans-serif",
-          marginLeft: 200,
-          marginRight: 200
-        }}><Link
-            href="https://github.com/yashkg31/"
-            color={"#ff8d30"}
-            sx={{
-        '&:hover': {
-          color: '#0fa3ff',
-        },
-      }}
-          >GitHub Repo
-          </Link></h2>
-        </Box>
+          <Box display={"flex"} justifyContent={"space-around"}>
 
+            <h2 style={{
+              fontFamily: "Zain, sans-serif",
+            }}>Created by <Link
+              href="https://www.linkedin.com/in/yash-gupta-12511a220/"
+              underline="none"
+              color={"#ff8d30"}
+              sx={{
+                '&:hover': {
+                  color: '#0fa3ff',
+                },
+              }}
+            >Yash Gupta
+              </Link></h2>
+
+            <h2 style={{
+              fontFamily: "Zain, sans-serif",
+            }}><Link
+              href="https://github.com/yashkg31/"
+              color={"#ff8d30"}
+              sx={{
+                '&:hover': {
+                  color: '#0fa3ff',
+                },
+              }}
+            >GitHub Repo
+              </Link></h2>
+
+          </Box>
+
+        </Box>
     </Box>
   )
 }

@@ -1,7 +1,7 @@
 import TextTransition, { presets } from 'react-text-transition';
 import { useEffect, useState } from 'react';
 
-const TEXTS = ['Ask about Recipes 🍲', 'Ask about Technology 💻', 'Ask about Movies 🍿', 'Ask anything!🔥'];
+const TEXTS = ['Ask about Recipes 🍲', 'Ask about Tech 💻', 'Ask about Movies 🍿', 'Ask anything!🔥'];
 
 const Typing_ani = () => {
 
