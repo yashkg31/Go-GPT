@@ -198,6 +198,16 @@ export const userSignUp = async (req, res) => {
         const hashedPassword = await hash(password, 10);
         const user = await User.create({ name, email, password: hashedPassword });
 
+        res.clearCookie(COOKIE_NAME, {
+            path: "/",
+            domain: "go-gpt.onrender.com",
+            expires,
+            httpOnly: true,
+            secure: true,
+            sameSite: "none",
+            signed: true
+        });
+
         const token = createToken(user._id.toString(), user.email, "30d");
         const expires = new Date();
         expires.setDate(expires.getDate() + 30);
@@ -207,6 +217,8 @@ export const userSignUp = async (req, res) => {
             domain: "go-gpt.onrender.com",
             expires,
             httpOnly: true,
+            secure: true,
+            sameSite: "none",
             signed: true
         });
 
@@ -226,11 +238,21 @@ export const userLogin = async (req, res) => {
         const isPasswordCorrect = await compare(password, user.password);
         if (!isPasswordCorrect) return res.status(403).send("Incorrect Password");
 
+        res.clearCookie(COOKIE_NAME, {
+            path: "/",
+            domain: "go-gpt.onrender.com",
+            expires,
+            httpOnly: true,
+            secure: true,
+            sameSite: "none",
+            signed: true
+        });
+
         const token = createToken(user._id.toString(), user.email, "30d");
         const expires = new Date();
         expires.setDate(expires.getDate() + 30);
 
-        res.cookie(COOKIE_NAME, token, {
+       res.cookie(COOKIE_NAME, token, {
             path: "/",
             domain: "go-gpt.onrender.com",
             expires,
@@ -264,7 +286,10 @@ export const userLogout = async (req, res) => {
         res.clearCookie(COOKIE_NAME, {
             path: "/",
             domain: "go-gpt.onrender.com",
+            expires,
             httpOnly: true,
+            secure: true,
+            sameSite: "none",
             signed: true
         });
 
