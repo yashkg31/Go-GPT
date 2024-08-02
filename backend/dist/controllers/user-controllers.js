@@ -188,6 +188,8 @@ export const userSignUp = async (req, res) => {
             domain: "go-gpt.onrender.com",
             expires,
             httpOnly: true,
+            secure: true,
+            sameSite: "none",
             signed: true
         });
 
