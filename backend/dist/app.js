@@ -7,7 +7,7 @@ import cors from 'cors';
 config();
 const app = express();
 app.use(cors({
-    origin: "http://localhost:5173",
+    origin: "https://go-gpt-frontend.onrender.com",
     credentials: true
 }));
 app.use(express.json());
