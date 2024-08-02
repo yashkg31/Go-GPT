@@ -51,7 +51,7 @@ const Home = () => {
           </Box>
         </Box>
 
-        <Box py={4} px={8}>
+        <Box py={4} sx={{ px: {lg : 8, xs: 4, sm: 4}}}>
           <h1 style={{
             letterSpacing: "2px"
           }}> About Go-GPT :</h1>
