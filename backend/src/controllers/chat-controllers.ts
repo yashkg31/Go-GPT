@@ -72,7 +72,7 @@ export const generateChatCompletion = async (req, res, next) => {
 
         // console.log("Sending request to OpenAI...");
         const chatResponse = await openai.createChatCompletion({
-            model: "gpt-3.5-turbo",
+            model: "gpt-4o-mini",
             messages: chats
         });
 
