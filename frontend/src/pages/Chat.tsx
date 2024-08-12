@@ -176,7 +176,7 @@ const Chat = () => {
           fontFamily: "Zain, sans-serif",
           fontWeight: 700,
           
-        }}>Model - GPT 3.5 Turbo</Typography>
+        }}>Model - GPT 4o-mini</Typography>
         <Box sx={{
           width: "100%",
           height: "60vh",
