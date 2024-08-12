@@ -1,8 +1,10 @@
 import { Avatar, Box, Typography } from "@mui/material"
 import { useAuth } from "../../context/AuthContext";
-import {Prism as SyntaxHighlighter} from 'react-syntax-highlighter'
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { coldarkDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import hljs from 'highlight.js/lib/core';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 
 import javascript from 'highlight.js/lib/languages/javascript';
 import python from 'highlight.js/lib/languages/python';
@@ -34,8 +36,8 @@ hljs.registerLanguage('typescript', typescript);
 hljs.registerLanguage('css', css);
 hljs.registerLanguage('html', html);
 
-function codeExtraction(message : string){
-  if(message.includes("```")){
+function codeExtraction(message: string) {
+  if (message.includes("```")) {
     const blocks = message.split("```");
     return blocks;
   }
@@ -51,38 +53,37 @@ function isCodeThere(str: string) {
     str.includes("{") ||
     str.includes("}") ||
     str.includes("#") ||
-    str.includes("//") 
-  ){
+    str.includes("//")
+  ) {
     return true;
   }
   return false;
-} 
+}
 
-const ChatItem = ({role, content} : {content: string; role: "user" | "assistant"}) => {
+const ChatItem = ({ role, content }: { content: string; role: "user" | "assistant" }) => {
   const messageBlocks = codeExtraction(content);
 
   const auth = useAuth();
   return (
-    role === "assistant" ? 
-    <Box sx={{
-      display: "flex",
-      p: 1.5,
-      bgcolor: "#1f1f1f",
-      my: 0.5,
-      gap:2,
-      borderRadius: "10px"
-    }}>
-
-      <Avatar sx={{
-        ml: "0",
-        bgcolor: "white"
+    role === "assistant" ?
+      <Box sx={{
+        display: "flex",
+        p: 1.5,
+        bgcolor: "#1f1f1f",
+        my: 0.5,
+        gap: 2,
+        borderRadius: "10px"
       }}>
-        <img src="logo-cropped.png" alt="go-gpt" width={"30px"}></img>
-      </Avatar>
-      <Box>
-        {/* <Typography fontSize="16px" mt={1}>{content}</Typography> */}
-        {!messageBlocks && (
-            <Typography fontSize="17px" mt={1}>{content}</Typography>
+
+        <Avatar sx={{
+          ml: "0",
+          bgcolor: "white"
+        }}>
+          <img src="logo-cropped.png" alt="go-gpt" width={"30px"}></img>
+        </Avatar>
+        <Box>
+          {!messageBlocks && (
+            <ReactMarkdown remarkPlugins={[remarkGfm]}>{content}</ReactMarkdown>
           )}
           {messageBlocks && messageBlocks.length > 0 && messageBlocks.map((block, index) =>
             isCodeThere(block) ? (
@@ -90,25 +91,25 @@ const ChatItem = ({role, content} : {content: string; role: "user" | "assistant"
                 {block}
               </SyntaxHighlighter>
             ) : (
-              <Typography key={index} fontSize="17px" mt={1}>{block}</Typography>
+              <ReactMarkdown key={index} remarkPlugins={[remarkGfm]}>{block}</ReactMarkdown>
             )
           )}
-      </Box>
-    </Box> : 
-    <Box sx={{
-      display: "flex",
-      p: 1.5,
-      bgcolor: "rgb(33, 56, 74)",
-      gap:2,
-      my: 0.5,
-      borderRadius: "10px"
-    }}>
-
-      <Avatar sx={{
-        ml: "0",
-        color: "white",
-        bgcolor: "#000"
+        </Box>
+      </Box> :
+      <Box sx={{
+        display: "flex",
+        p: 1.5,
+        bgcolor: "rgb(33, 56, 74)",
+        gap: 2,
+        my: 0.5,
+        borderRadius: "10px"
       }}>
+
+        <Avatar sx={{
+          ml: "0",
+          color: "white",
+          bgcolor: "#000"
+        }}>
           {auth?.user?.name && auth?.user?.name.split(" ").length > 1 ? (
             <>
               {auth.user.name.split(" ")[0][0]}
@@ -117,12 +118,12 @@ const ChatItem = ({role, content} : {content: string; role: "user" | "assistant"
           ) : (
             auth?.user?.name[0]
           )}
-      </Avatar>
-      <Box>
-        <Typography fontSize="17px" mt={1}>{content}</Typography>
+        </Avatar>
+        <Box>
+          <ReactMarkdown remarkPlugins={[remarkGfm]}>{content}</ReactMarkdown>
+        </Box>
       </Box>
-    </Box>
   )
 }
 
-export default ChatItem
+export default ChatItem;
