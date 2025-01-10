@@ -81,7 +81,7 @@ const Home = () => {
               fontFamily: "Zain, sans-serif",
               marginLeft: "30px"
             }}><Link
-              href="https://github.com/yashkg31/"
+              href="https://github.com/yashkg31/Go-GPT"
               color={"#ff8d30"}
               sx={{
                 '&:hover': {
