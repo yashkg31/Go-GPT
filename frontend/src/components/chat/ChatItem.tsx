@@ -77,6 +77,7 @@ const ChatItem = ({ role, content }: { content: string; role: "user" | "assistan
 
         <Avatar sx={{
           ml: "0",
+          mt: 0.5,
           bgcolor: "white"
         }}>
           <img src="logo-cropped.png" alt="go-gpt" width={"30px"}></img>
@@ -107,6 +108,7 @@ const ChatItem = ({ role, content }: { content: string; role: "user" | "assistan
 
         <Avatar sx={{
           ml: "0",
+          mt: 0.5,
           color: "white",
           bgcolor: "#000"
         }}>
